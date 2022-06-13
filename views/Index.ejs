@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
-        <title>Pokemon</title>
+        <title> <%= pageTitle %> </title>
     </head>
 
     <body>
-        <h1>See All The Pokemon!</h1>
+        <h1 class="">Hello</h1>
+
+        <a href="/pokemon/new">Create a new Pokemon</a>
 
         <ul>
-            data.map((pokemon, i)
+            <% pokemonData.map( (pokemon) => { %>
                 <li>
-                    <a href=pokemon.name.charAt(0).toUppercase() + pokemon.name.slice(1)>
+                    <%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %>
                 </li>
+
+                <a href="/pokemon/<%= pokemon._id %>">Details</a>
+            <% }) %> 
         </ul>
+            
     </body>
 </html>
